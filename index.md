@@ -12,14 +12,6 @@ For women business owners over 40
 ![Before and after, down 40 lbs](img/ba-40.png)−40 LBS
 ![Before and after, down 30 lbs](img/ba-30.png)−30 LBS
 
-**100K+**Follow my free weight-loss videos
-
-**40+**People wrote to tell me what they lost
-
-**50 lbs**Biggest loss they wrote to me about
-
-**0**Meals you have to plan
-
 Before & after
 
 ## Real women. Real photos.

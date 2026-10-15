@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your First Week, Done For You</title>
+<meta name="description" content="For Rockville women business owners over 40. 30 minutes and $20: your grocery cart filled and your go-to orders picked before we hang up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="track.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="./">Romiko<span>.</span></a>
+    <a class="btn pay" href="#pay">Book for $20 <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow rise">Rockville women business owners over 40</div>
+      <h1 class="rise d1">Your first week of food, <span class="hl">done for you.</span></h1>
+      <p class="lead rise d2"><b>You run a business. Your food is the one thing nobody plans for you.</b> So I will.</p>
+      <a class="btn pay rise d3" href="#pay">Book my call for $20 <span class="arr">→</span></a>
+      <p class="fine rise d3">30 minutes · Saturdays &amp; Sundays · I only do 12 a week</p>
+    </div>
+    <div class="hero-me rise d4">
+      <img src="img/romiko.webp" alt="Romiko, your coach" width="900" height="900">
+      <div class="me-badge"><b>Romiko</b><span>Coach, right here in Rockville</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Before we hang up</div>
+      <h2>Here's what you walk away with.</h2>
+    </div>
+    <div class="steps two-up">
+      <div class="step reveal"><div class="n">1</div><h3>Your grocery cart, already filled</h3><p>At the store you already use. Breakfast, lunch and dinner picked for you. You tap "pay" and pick it up.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Your orders at your 3 spots</h3><p>Your coffee stop, your lunch spot, your drive-thru. You'll know exactly what to order at each one.</p></div>
+    </div>
+    <p class="you reveal">No cooking. No meal prep. <span>Keep your client dinners.</span></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">How it works</div>
+      <h2>4 steps. About 2 minutes.</h2>
+    </div>
+    <div class="steps four">
+      <div class="step reveal"><div class="n">1</div><h3>Pay $20</h3><p>Secure checkout.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Pick a time</h3><p>Saturday or Sunday afternoon.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Answer 4 questions</h3><p>Your store, your 3 spots, anything you can't eat.</p></div>
+      <div class="step reveal"><div class="n">4</div><h3>We talk</h3><p>Your cart and your orders are ready on the call.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="pay">
+  <div class="wrap">
+    <div class="eyebrow reveal">My promise</div>
+    <h2 class="reveal">Not worth more than $20? You get it back.</h2>
+    <p class="reveal">Tell me before we hang up and I'll refund you. You keep the plan.</p>
+    <a class="btn pay reveal" id="paybtn" href="https://buy.stripe.com/28EfZhc9v9Z80Si1YJ87K00">Pay $20 and pick my time <span class="arr">→</span></a>
+    <p class="fine light reveal">Only 12 calls a week, Saturdays &amp; Sundays, 1–4pm.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Coaching, not medical advice. Talk to your doctor before changing your diet or exercise, especially if you have a health condition. Results vary from person to person.</p>
+    <p>Romiko · 645 Elmcroft Blvd, Rockville, MD 20850</p>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('paybtn').addEventListener('click',()=>track('InitiateCheckout',{value:20,currency:'USD'}));
+</script>
+</body>
+</html>
