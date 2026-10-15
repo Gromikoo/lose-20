@@ -24,7 +24,7 @@
 <nav>
   <div class="wrap">
     <a class="logo" href="./">Romiko<span>.</span></a>
-    <a class="btn pay" href="#pay">Book for $20 <span class="arr">→</span></a>
+    <a class="btn pay" href="https://buy.stripe.com/28EfZhc9v9Z80Si1YJ87K00">Book for $20 <span class="arr">→</span></a>
   </div>
 </nav>
 
@@ -34,8 +34,8 @@
       <div class="eyebrow rise">Rockville women business owners over 40</div>
       <h1 class="rise d1">Your first week of food, <span class="hl">done for you.</span></h1>
       <p class="lead rise d2"><b>You run a business. Your food is the one thing nobody plans for you.</b> So I will.</p>
-      <a class="btn pay rise d3" href="#pay">Book my call for $20 <span class="arr">→</span></a>
-      <p class="fine rise d3">30 minutes · Saturdays &amp; Sundays · I only do 12 a week</p>
+      <a class="btn pay rise d3" href="https://buy.stripe.com/28EfZhc9v9Z80Si1YJ87K00">Book my call for $20 <span class="arr">→</span></a>
+      <p class="spots rise d3">30 minutes · Saturdays &amp; Sundays · <b>Only 12 calls a week</b></p>
     </div>
     <div class="hero-me rise d4">
       <img src="img/romiko.webp" alt="Romiko, your coach" width="900" height="900">
@@ -138,7 +138,7 @@
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-document.getElementById('paybtn').addEventListener('click',()=>track('InitiateCheckout',{value:20,currency:'USD'}));
+document.querySelectorAll('a.pay').forEach(a=>a.addEventListener('click',()=>track('InitiateCheckout',{value:20,currency:'USD'})));
 </script>
 </body>
 </html>
