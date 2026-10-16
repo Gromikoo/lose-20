@@ -102,6 +102,14 @@
 <script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
+// When she finishes booking inside the calendar, go straight to the booked page (no "You are leaving Calendly" screen).
+window.addEventListener('message',function(e){
+  if(/calendly\.com$/.test(new URL(e.origin).hostname) && e.data && e.data.event==='calendly.event_scheduled'){
+    track('Schedule'); location.href='booked.html';
+  }
+});
+</script>
+<script>
 // Count the $20 sale once per checkout (Stripe adds ?session_id=... to this page's link).
 (function(){
   const sid=new URLSearchParams(location.search).get('session_id')||'no-session';
